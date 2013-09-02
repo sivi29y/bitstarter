@@ -2,12 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>The BitCoinstarter</title>
+    <title>The ATM BitCoinstarter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuery via Google + local fallback, h5bp.com -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="jquery-2.0.3.min.js"><\/script>')</script>
+    
+
+
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script> 
+
     <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
-    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">    
-    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
+    <link rel="stylesheet" href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css">     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">  
+
+    
     <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
@@ -21,35 +31,11 @@
       ga('create', 'UA-17100676-4', 'moviply.tv');
       ga('send', 'pageview');
     </script>
-    
+      <link rel="icon" 
+      type="image/png" 
+      href="http://i296.photobucket.com/albums/mm161/drellaunited/glyphicons_009_magic.png" </link>             
+
     <style type="text/css">
-
-     /* Large Desktop */
-     @media (min-width: 980px){
-       body {
-            padding-top: 60px;
-       }
-       .linediv-l {
-          border-right: 1px white solid;
-       }
-       .linediv-r {
-         border-left: 1px white solid;
-       }
-     }
-
-     /* Landscape phones and down */
-     @media (max-width: 480px) {
-       .copy {
-          padding: 2.5% 10%;
-       }
-       .linediv-l {
-          border-bottom: 1px white solid;
-       }
-       .linediv-r {
-          border-top: 1px white solid;
-       }
-     }
-
 
 
      /* All form factors */
@@ -110,7 +96,157 @@
         color: #ccccff;
       }
 
-      /* http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-center-position */      
+body {
+margin: 0;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+font-size: 14px;
+line-height: 20px;
+color: #8D8584;
+background-color: #ffffff;
+}
+
+.navbar-inverse .navbar-inner {
+background-color: #C0C0C0;
+background-image: -moz-linear-gradient(top, #222222, #111111);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+background-image: -webkit-linear-gradient(top, #222222, #111111);
+background-image: -o-linear-gradient(top, #222222, #111111);
+background-image: linear-gradient(to bottom, #FCFCFC, #D8D8D8);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+border-color: #D5D5D5;
+}
+
+
+
+.navbar-inverse .navbar-search .search-query {
+color: #ffffff;
+background-color: #F0F0F0;
+border-color: rgba(255, 255, 255, 0);
+-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+-webkit-transition: none;
+-moz-transition: none;
+-o-transition: none;
+transition: none;
+}
+
+/*.navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .nav > li > a:focus, .navbar-inverse .nav-collapse .dropdown-menu a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:focus {
+    background-color: #FFFFFF;
+}
+.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {
+    color: #999999;
+}
+*/
+
+/*
+.navbar .btn-navbar .icon-bar {
+display: block;
+width: 18px;
+height: 2px;
+background-color: #f5f5f5;
+-webkit-border-radius: 1px;
+-moz-border-radius: 1px;
+border-radius: 1px;
+-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+} 
+*/
+
+
+/*
+.navbar-inverse .btn-navbar {
+color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #E0DCDC;
+background-image: -moz-linear-gradient(top, #151515, #040404);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#151515), to(#040404));
+background-image: -webkit-linear-gradient(top, #151515, #040404);
+background-image: -o-linear-gradient(top, #151515, #040404);
+background-image: linear-gradient(to bottom, #E7E7E7, #808080);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff151515', endColorstr='#ff040404', GradientType=0);
+border-color: #040404 #040404 #000000;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+
+*/
+
+     /* Large Desktop */
+     @media (min-width: 980px){
+       body {
+            padding-top: 60px;
+       }
+       .linediv-l {
+          border-right: 1px white solid;
+       }
+       .linediv-r {
+         border-left: 1px white solid;
+       }
+      
+ 
+.navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {
+    color: #999999;
+}
+
+.navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:hover {
+    background-color: none;
+    color: #FFFFFF;  
+}
+
+
+     }
+
+     /* Landscape phones and down */
+     @media (max-width: 979px) {
+       .copy {
+          padding: 2.5% 10%;
+       }
+       .linediv-l {
+          border-bottom: 1px white solid;
+       }
+       .linediv-r {
+          border-top: 1px white solid;
+       }
+     
+     .navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .nav > li > a:focus, .navbar-inverse .nav-collapse .dropdown-menu a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:focus {
+    background-color: #FFFFFF;
+}
+
+      .navbar-inverse .btn-navbar:hover {
+      color: #ffffff;
+      background-color: #29DA11;  /*--> more conservative #C4C4C4 */
+      }
+
+     .navbar-inverse .btn-navbar {
+color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #0e0e0e;
+background-image: -moz-linear-gradient(top, #151515, #040404);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#151515), to(#040404));
+background-image: -webkit-linear-gradient(top, #151515, #040404);
+background-image: -o-linear-gradient(top, #151515, #040404);
+background-image: linear-gradient(to bottom, #FFFFFF, #9B9898);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff151515', endColorstr='#ff040404', GradientType=0);
+border-color: #FFFCFC #C5C5C5 #949494;
+border-top-color: rgba(255, 255, 255, 0.94);
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}    
+
+
+
+     }
+
+
+  
+
+
+
+/* http://support.addthis.com/customer/portal/questions/1136093-share-buttons-in-center-position */      
      div.addthis_toolbox {
      width:220px;
      margin: 0 auto; 
@@ -121,25 +257,28 @@
   <body>
    <!-- Mobile friendly navbar adapted from example. -->
    <!-- http://twitter.github.io/bootstrap/examples/starter-template.html -->
-
+   
    <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-	<button type="button" class="btn btn-navbar"
-		data-toggle="collapse" data-target=".nav-collapse">
-	  <span class="icon-bar"></span>
-	  <span class="icon-bar"></span>
+	<form class="navbar-search pull-right">
+	    <input type="text" class="search-query" placeholder="Search">
+	    </form>
+	<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	    <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-	</button>
-	<a class="brand" href="#">Bitstarter</a>
+	  </button>
+	<a class="brand" href="#">Bitcoin ATM</a>
 	<div class="nav-collapse collapse">
-	  <ul class="nav">
-	    <li class="active"><a href="#">Home</a></li>
-	    <!--<li><a href="#about">About</a></li>
-	    <li><a href="#contact">Contact</a></li>
-            -->     
-	  </ul>
-	</div><!--/.nav-collaspe -->
+	    <ul class="nav">
+	          <li class="active">
+		          </li><li><a href="#"><i class="icon-home icon-white"></i>Home</a></li>
+		        <li><a href="#about"><i class="icon-info icon-white"></i>About</a></li>
+			      <li><a href="#contact"><i class="icon-envelope icon-white"></i>Contact</a></li>
+                 
+			        </ul>
+	    </div><!--/.nav-collaspe -->
        </div>
       </div>
     </div>
