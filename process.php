@@ -1,4 +1,36 @@
 <?php
+
+// Pear Mail Library
+require_once "Mail.php";
+
+$from = '<from.gmail.com>';
+$to = '<to.yahoo.com>';
+$subject = 'Hi!';
+$body = "Hi,\n\nHow are you?";
+
+$headers = array(
+    'From' => $from,
+    'To' => $to,
+    'Subject' => $subject
+);
+
+$smtp = Mail::factory('smtp', array(
+        'host' => 'ssl://smtp.gmail.com',
+        'port' => '465',
+        'auth' => true,
+        'username' => 'moviply.tv@gmail.com',
+        'password' => 'man&you44'
+    ));
+
+$mail = $smtp->send($to, $headers, $body);
+
+if (PEAR::isError($mail)) {
+    echo('<p>' . $mail->getMessage() . '</p>');
+} else {
+    echo('<p>Message successfully sent!</p>');
+}
+
+/* 
 $myemail = 'moviply.tv@gmail.com';
 if (isset($_POST['name'])) {
 $name = strip_tags($_POST['name']);
@@ -18,4 +50,5 @@ $email_body = "You have received a new message. ".
 $headers = "From: $myemail\n";
 $headers .= "Reply-To: $email";
 mail($to,$email_subject,$email_body,$headers);
-}?>
+*/
+?>
