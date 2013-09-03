@@ -62,6 +62,44 @@
     <script>
           $(document).ready(function () {
 	      $("input#submit").click(function(){
+                  var mailer = require('mailer');
+	          mailer.send({
+	             // node_mailer supports authentication,
+                     // docs at: https://github.com/marak/node_mailer
+	             host:    'localhost',
+	             port:    '25',
+                     to:      'moviply.tv@gmail.com,
+	             from:    'nodepad@example.com',
+                     subject: 'Welcome to Nodepad',
+                     body:    'All work and no play makes DailyJS pretty dull'
+	           },
+
+	      // Your response callback
+	  function(err, result) {
+          if (err) {
+                      console.log(err);
+	              alert("error on mailer");
+          }
+	 }
+       );
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                  $.ajax({
                              type: "POST",
                              url: "process.js", //process to mail
