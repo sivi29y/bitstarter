@@ -1,31 +1,36 @@
 <?php
-require("class.phpmailer.php");
 
-    $mail = new PHPMailer();
+// Pear Mail Library
+require_once "Mail.php";
 
-    $mail->IsSMTP();  // telling the class to use SMTP
-    $mail->SMTPAuth   = true; // SMTP authentication
-    $mail->Host       = "smtp.gmail.com"; // SMTP server
-    $mail->Port       = 465; // SMTP Port
-    $mail->Username   = "moviply.tv@gmail.com"; // SMTP account username
-    $mail->Password   = "abcd1234ABC";        // SMTP account password
+$from = '<from.gmail.com>';
+$to = '<to.yahoo.com>';
+$subject = 'Hi!';
+$body = "Hi,\n\nHow are you?";
 
-    $mail->SetFrom('moviply.tv@gmail.com', 'John Doe'); // FROM
-    $mail->AddReplyTo('moviply.tv@gmail.com', 'John Doe'); // Reply TO
+$headers = array(
+    'From' => $from,
+    'To' => $to,
+    'Subject' => $subject
+);
 
-    $mail->AddAddress('moviply.tv@gmail.com', 'Jane Doe'); // recipient email
+$smtp = Mail::factory('smtp', array(
+        'host' => 'ssl://smtp.gmail.com',
+        'port' => '465',
+        'auth' => true,
+        'username' => 'moviply.tv@gmail.com',
+        'password' => 'man&you44'
+    ));
 
-    $mail->Subject    = "First SMTP Message"; // email subject
-    $mail->Body       = "Hi! \n\n This is my first e-mail sent through Google SMTP using PHPMailer.";
+$mail = $smtp->send($to, $headers, $body);
 
-    if(!$mail->Send()) {
-      echo 'Message was not sent.';
-      echo 'Mailer error: ' . $mail->ErrorInfo;
-    } else {
-      echo 'Message has been sent.';
-    }
-/*require('Mail.php'); */
-/*
+if (PEAR::isError($mail)) {
+    echo('<p>' . $mail->getMessage() . '</p>');
+} else {
+    echo('<p>Message successfully sent!</p>');
+}
+
+/* 
 $myemail = 'moviply.tv@gmail.com';
 if (isset($_POST['name'])) {
 $name = strip_tags($_POST['name']);
@@ -46,4 +51,4 @@ $headers = "From: $myemail\n";
 $headers .= "Reply-To: $email";
 mail($to,$email_subject,$email_body,$headers);
 */
-}?>
+?>
