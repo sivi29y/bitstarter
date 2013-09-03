@@ -41,48 +41,9 @@
       href="http://i296.photobucket.com/albums/mm161/drellaunited/glyphicons_009_magic.png" </link>             
 
      <!-- contact form pop -->
-     <script>
-       var data = {
-           name: $("#form_name").val(),
-           email: $("#form_email").val(),
-           message: $("#form_msg").val()
-       };
-       $.ajax({
-           type: "POST",
-           url: "email.php",
-           data: data,
-           success: function(){
-           $('.success').fadeIn(1000);
-           }
-       });
-
-    </script>
-
-
     <script>
           $(document).ready(function () {
 	      $("input#submit").click(function(){
-                  var mailer = require('mailer');
-	          mailer.send({
-	             // node_mailer supports authentication,
-                     // docs at: https://github.com/marak/node_mailer
-	             host:    'localhost',
-	             port:    '25',
-                     to:      'moviply.tv@gmail.com,
-	             from:    'nodepad@example.com',
-                     subject: 'Welcome to Nodepad',
-                     body:    'All work and no play makes DailyJS pretty dull'
-	           },
-
-	      // Your response callback
-	  function(err, result) {
-          if (err) {
-                      console.log(err);
-	              alert("error on mailer");
-          }
-	 }
-       );
-                
                  $.ajax({
                              type: "POST",
                              url: "process.php", //process to mail
@@ -303,7 +264,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }    
 
 
-
      }
 
 
@@ -339,8 +299,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	    <ul class="nav">
 	          <li class="active">
 		        </li><li><a href="#"><i class="icon-home icon-white"></i>Home</a></li>
-		        <li><a href="#about"><i class="icon-info icon-white"></i>About</a></li>
+		        <li><a href="#about" data-toggle="modal"><i class="icon-info icon-white"></i>About</a></li>
 			<li><a href="#contact" data-toggle="modal" ><i class="icon-envelope icon-white"></i>Contact</a></li>
+			<li> <a href="https://twitter.com/intent/tweet?text=I support this project on startup class competition 
+&amp;hashtags=StartupMOOC&amp;via=StartupMOOC&amp;url=http://www.moviply.tv" ng-href="https://twitter.com/intent/tweet?text=I support this project on startup class competition 
+&amp;hashtags=StartupMOOC&amp;via=StartupMOOC&amp;url=http://www.moviply.tv" target="_blank">
+  <i class="icon-twitter icon-white"></i>&nbsp;Tweet</a></li>
            </ul>
         </div><!--/.nav-collaspe -->
        </div>
@@ -458,6 +422,53 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
         </div>
       </div>
 
+    <!-- Promotion -->
+    <!--    
+      <div class="row-fluid faq">
+          <div class="span10 offset1">
+            <h3>Who Are We?</h3>
+            <div class="accordion" id="accordion2">
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseOne">
+                    Who are toy and what you want?
+                   </a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    I don't know who is toy but we want to get many tweets and bitcoins to win the competition of the class 
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse"
+                     data-parent="#accordion2" href="#collapseTwo">
+                    What's a Bitcoin ATM?
+                  </a>
+                </div>
+                <div id="collapseTwo" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    A post that let you change your BitCoins to the local currency.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+	  
+     --->
+
+
+
+
+
+
+
+
+
+
+
       <!-- For the FAQ, we introduce a little bit of JS, using the accordion. -->
       <!-- This brings in jquery.js and bootstrap.js as dependencies. -->
       <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
@@ -514,12 +525,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 
 
       <!--pop up contact form -->
-      <div class="well well-large">
-	<!--         <h2>Twitter Bootstrap Modal Contact Form Demo</h2>  -->
-	<div id="contact" class="modal hide fade in" style="display: none;">
+      	<div id="contact" class="modal hide fade in" style="display: none;">
 	  <div class="modal-header">
 	    <a class="close" data-dismiss="modal">x</a>
-	    <h3>Send me a message</h3>
+	    <h3>Send us a message</h3>
 	  </div>
 	  <div class="modal-body">
             <form class="contact_body" name="contact_body">
@@ -530,13 +539,40 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
               <label class="label" for="form_msg">Enter a Message</label><br>
               <textarea name="form_msg" class="input-xlarge"></textarea>
              </form>
-           </div>
-           <div class="modal-footer">
+            </div>
+	    <div class="modal-footer">
              <input class="btn btn-success" type="submit" value="Send!" id="submit">
              <a href="#" class="btn" data-dismiss="modal">Nah.</a>
            </div>
-         </div>
       <!-- <div id="thanks"><p><a data-toggle="modal" href="#contact" class="btn btn-primary btn-large">Modal powers, activate!</a></p></div> -->
+       </div>     
+      <!-- pop about -->       
+        <div id="about" class="modal hide fade in" style="display: none;" aria-hidden="true">
+	    <div class="modal-header">
+	          <a class="close" data-dismiss="modal">x</a>
+		      <h3>At the July Alps</h3>
+		      <img src="http://i296.photobucket.com/albums/mm161/drellaunited/JulyAlps303.jpg" alt="a pic of me at the july alps" <="" img="">
+	      </div>
+	      <div class="modal-body">
+            
+            </div>
+	          <div class="modal-footer">
+             <input class="btn btn-success" type="reset" value="Close" id="reset" data-dismiss="modal">
+             <a href="#" class="btn" data-dismiss="modal">Close</a>
+           </div>
+        </div>          
+      <!-- <div id="thanks"><p><a data-toggle="modal" href="#contact" class="btn btn-primary btn-large">Modal powers, activate!</a></p></div> -->
+</div>
+
+
+
+
+
+
+
+
+
+
 </div>
   </body>
 </html>  
