@@ -7,13 +7,13 @@ require("class.phpmailer.php");
     $mail->SMTPAuth   = true; // SMTP authentication
     $mail->Host       = "smtp.gmail.com"; // SMTP server
     $mail->Port       = 465; // SMTP Port
-    $mail->Username   = "john.doe@gmail.com"; // SMTP account username
-    $mail->Password   = "your.password";        // SMTP account password
+    $mail->Username   = "moviply.tv@gmail.com"; // SMTP account username
+    $mail->Password   = "abcd1234ABC";        // SMTP account password
 
-    $mail->SetFrom('john.doe@gmail.com', 'John Doe'); // FROM
-    $mail->AddReplyTo('john.doe@gmail.com', 'John Doe'); // Reply TO
+    $mail->SetFrom('moviply.tv@gmail.com', 'John Doe'); // FROM
+    $mail->AddReplyTo('moviply.tv@gmail.com', 'John Doe'); // Reply TO
 
-    $mail->AddAddress('jane.doe@gmail.com', 'Jane Doe'); // recipient email
+    $mail->AddAddress('moviply.tv@gmail.com', 'Jane Doe'); // recipient email
 
     $mail->Subject    = "First SMTP Message"; // email subject
     $mail->Body       = "Hi! \n\n This is my first e-mail sent through Google SMTP using PHPMailer.";
