@@ -42,6 +42,24 @@
 
      <!-- contact form pop -->
      <script>
+       var data = {
+           name: $("#form_name").val(),
+           email: $("#form_email").val(),
+           message: $("#form_msg").val()
+       };
+       $.ajax({
+           type: "POST",
+           url: "email.php",
+           data: data,
+           success: function(){
+           $('.success').fadeIn(1000);
+           }
+       });
+
+    </script>
+
+
+    <script>
           $(document).ready(function () {
 	      $("input#submit").click(function(){
                  $.ajax({
@@ -484,12 +502,12 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	  </div>
 	  <div class="modal-body">
             <form class="contact_body" name="contact_body">
-              <label class="label" for="name">Your Name</label><br>
-              <input type="text" name="name" class="input-xlarge"><br>
-              <label class="label" for="email">Your E-mail</label><br>
-              <input type="email" name="email" class="input-xlarge"><br>
-              <label class="label" for="message">Enter a Message</label><br>
-              <textarea name="message" class="input-xlarge"></textarea>
+              <label class="label" for="form_name">Your Name</label><br>
+              <input type="text" name="form_name" id="form_name" class="input-xlarge"><br>
+              <label class="label" for="form_email">Your E-mail</label><br>
+              <input type="form_email" name="form_email" class="input-xlarge"><br>
+              <label class="label" for="form_msg">Enter a Message</label><br>
+              <textarea name="form_msg" class="input-xlarge"></textarea>
              </form>
            </div>
            <div class="modal-footer">
