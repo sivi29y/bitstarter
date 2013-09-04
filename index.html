@@ -32,9 +32,6 @@
       ga('send', 'pageview');
     </script>
 
-    <script>var nodemailer = require("nodemailer");</script> 
-
-
      <!-- favicon -->
       <link rel="icon" 
       type="image/png" 
@@ -42,6 +39,32 @@
 
      <!-- contact form pop -->
     <script>
+      /*         
+      $("input#submit").click(function(e) {
+          alert("submit reached");
+          e.preventDefault(); // Prevents the page from refreshing
+          var $this = $(this); // `this` refers to the current form element
+          if( $("#contactForm").validationEngine('validate') ) {
+              alert("form validated");
+              //Post Data to Node Server
+              $.post(
+              $this.attr("action"), // Gets the URL to sent the post to
+              $this.serialize(), // Serializes form data in standard format
+              function(data) { /** code to handle response **/ },
+              "json" // The format the response should be in
+              );
+              //Notify User That the Email Was Sent to the Server & Thanks!
+              $('#contactThanksModal').modal('show');
+              $('#contactModal').modal('hide');
+              }
+          else {
+              //handle Invalid Email Format Error
+              alert("Uston we have a problem(mail)");
+          }
+      });
+     */
+
+
           $(document).ready(function () {
 	      $("input#submit").click(function(){
                  $.ajax({
@@ -58,6 +81,7 @@
                                    });
                       });
                  });
+
       </script>   
 	    
     <!-- css begin --> 
@@ -461,14 +485,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 
 
 
-
-
-
-
-
-
-
-
       <!-- For the FAQ, we introduce a little bit of JS, using the accordion. -->
       <!-- This brings in jquery.js and bootstrap.js as dependencies. -->
       <!-- http://twitter.github.io/bootstrap/javascript.html#collapse -->
@@ -523,29 +539,48 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 
 
 
+   <!--pop up contact form -->
+   <div id="contact" class="modal hide fade in" style="display: none;">
+     <div class="modal-header">
+       <a class="close" data-dismiss="modal">x</a>
+       <h3>Send us a message</h3>
+     </div>
+     <div class="modal-body">
+       <form id="contactForm" class="contact_body" name="contact_body" action="/contact">
+         <label class="label" for="name">Your Name</label><br>
+         <input type="text" name="name" id="name" class="input-xlarge"><br>
+         <label class="label" for="email">Your E-mail</label><br>
+         <input type="email" id="email" name="email" class="input-xlarge"><br>
+         <label class="label" for="info">Enter a Message</label><br>
+         <textarea name="info" id="info" class="input-xlarge"></textarea>
+       </form>
+     </div>
+     <div class="modal-footer">
+       <input class="btn btn-success" type="submit" value="Send!" id="submit">
+       <a href="#" class="btn" data-dismiss="modal">Nah.</a>
+     </div>
 
-      <!--pop up contact form -->
-      	<div id="contact" class="modal hide fade in" style="display: none;">
-	  <div class="modal-header">
-	    <a class="close" data-dismiss="modal">x</a>
-	    <h3>Send us a message</h3>
+
+        <div role="dialog" tabindex="1" id="contactThanksModal" class="modal fade" aria-hidden="true" >
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-body center-text">
+		<h3>Thanks for Contacting Us! </h3><br><h4>Your Request has been received and we will contact you shortly!</h4>
+		</div>
+	      <div class="modal-footer">
+		<button data-dismiss="modal" class="btn btn-default" type="button">Ok</button>
+		</div>
+	      </div><!-- /.modal-content -->
+	    </div><!-- /.modal-dialog -->
 	  </div>
-	  <div class="modal-body">
-            <form class="contact_body" name="contact_body">
-              <label class="label" for="form_name">Your Name</label><br>
-              <input type="text" name="form_name" id="form_name" class="input-xlarge"><br>
-              <label class="label" for="form_email">Your E-mail</label><br>
-              <input type="form_email" name="form_email" class="input-xlarge"><br>
-              <label class="label" for="form_msg">Enter a Message</label><br>
-              <textarea name="form_msg" class="input-xlarge"></textarea>
-             </form>
-            </div>
-	    <div class="modal-footer">
-             <input class="btn btn-success" type="submit" value="Send!" id="submit">
-             <a href="#" class="btn" data-dismiss="modal">Nah.</a>
-           </div>
+
+
       <!-- <div id="thanks"><p><a data-toggle="modal" href="#contact" class="btn btn-primary btn-large">Modal powers, activate!</a></p></div> -->
-       </div>     
+       </div>  
+
+
+
+   
       <!-- pop about -->       
         <div id="about" class="modal hide fade in" style="display: none;" aria-hidden="true">
 	    <div class="modal-header">
