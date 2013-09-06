@@ -7,7 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "2.5.x"
+    "express": "2.5.x",
+    "cheerio":"0.12.x",
+    "commander":"1.3.x",
+    "emailjs":"0.3.x",
+    "nodemailer":"0.5.x", 
+    "jshint":"2.1.x",
+    "mailer":"0.4.x",
+    "restler":"2.0.x" 
   },
   "engines": {
     "node": "0.8.x",
