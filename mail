@@ -1,7 +1,7 @@
 var email   = require("emailjs/email");
 var server  = email.server.connect({
-   user:    "G_username", 
-   password:"G_password", 
+   user:    process.env.G_username, 
+   password:process.env.G_password, 
    host:    "smtp.gmail.com", 
    ssl:     true
 
@@ -11,7 +11,7 @@ var server  = email.server.connect({
 server.send({
    text:    "i hope this works", 
    from:    "you <username@gmail.com>", 
-   to:      "someone <someone@gmail.com>, another <another@gmail.com>",
+   to:     process.env.G_username //"someone <someone@gmail.com>, another <another@gmail.com>",
    cc:      "else <else@gmail.com>",
    subject: "testing emailjs"
 }, function(err, message) { console.log(err || message); });
