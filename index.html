@@ -64,7 +64,7 @@
 	      $("input#submit").click(function(){
                  $.ajax({
                              type: "POST",
-                             url: "process.js", //process to mail
+                             url: "mail", //process to mail
                              data: $('form.contact_body').serialize(),
                                      success: function(msg){
                                      $("#thanks").html(msg) //hide button and show thank you
@@ -479,7 +479,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 
 
       </div>
-
+      
       <!-- Not crucial, but we put this under a CC By-SA 3.0 license. -->
       <!-- http://creativecommons.org/licenses/ -->
       <div class="row-fluid footer">
