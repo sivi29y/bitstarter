@@ -55,7 +55,7 @@ app.post('/contact', function(req, res) {
 	user: process.env.G_username,
 	password:process.env.G_password,
 	host: "smtp.gmail.com",
-	port: 456,
+	port: 465,
 	domain:"http://moviply.tv",
 	tls: true,
 	ssl: true
@@ -65,10 +65,9 @@ app.post('/contact', function(req, res) {
     var message = {
 	text: "Thanks for contacting us! We have receive your message and we will contact you as soon as possible. We received the following information:"
 	    +"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
-	from: "Chack <infov@moviply.tv>",
+	from: "infov@moviply.tv",
 	to: name + " <"+email+">",
-	cc: "Chack <moviply.tv@gmail.com>",
-	subject: "Information Request Confirmation",
+	subject: "Checking email",
 	attachment:
 	[
 	    {data:"<html>Thanks for contacting us! We have receive your message and we will contact you as soon as possible.<br>"
