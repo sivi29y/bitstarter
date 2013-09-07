@@ -24,9 +24,9 @@ app.listen(port, function() {
 app.post('/contact', function(req, res) {
     //var email=[];
     //var checkSignup = req.body.signupCheck;
-    var name =  req.body.form_name;
-    var info =  req.body.form_msg;
-    var email = req.body.form_email;
+    var name =  req.form_name;
+    var info =  req.form_msg;
+    var email = req.form_email;
 /*
     email.push(req.body.email);
 
