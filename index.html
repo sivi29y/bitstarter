@@ -41,6 +41,7 @@
       href="http://i296.photobucket.com/albums/mm161/drellaunited/glyphicons_009_magic.png" </link>             
 
      <!-- contact form pop -->
+     /*
      <script>
        var data = {
            name: $("#form_name").val(),
@@ -58,16 +59,18 @@
 
     </script>
 
+     */
 
     <script>
           $(document).ready(function () {
 	      $("input#submit").click(function(){
                  $.ajax({
                              type: "POST",
-                             url: "mail", //process to mail
+                             url: "/contact", //process to mail
                              data: $('form.contact_body').serialize(),
-                                     success: function(msg){
-                                     $("#thanks").html(msg) //hide button and show thank you
+                                     success: function(){
+                                     alert("success!");  
+                                     // $("#thanks").html(msg) //hide button and show thank you
                                      $("#contact").modal('hide'); //hide popup 
                                      },
                                      error: function(){
