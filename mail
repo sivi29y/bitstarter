@@ -11,7 +11,6 @@ var server  = email.server.connect({
 server.send({
    text:    "i hope this works", 
    from:    "sivi <moviply.tv@gmail.com>", 
-   to:     process.env.G_username, //"someone <someone@gmail.com>, another <another@gmail.com>",
-   cc:      "else <else@gmail.com>",
+   to:     process.env.G_username, 
    subject: "testing emailjs"
 }, function(err, message) { console.log(err || message); });
