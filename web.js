@@ -75,7 +75,7 @@ app.post('/contact', function(req, res) {
     */
 
     
-    var message2 = {
+    var message = {
 	text: "Thanks for contacting us! We have receive your message and we will contact you as soon as possible. We received the following information:"
 	    +"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
 	from: "infov@moviply.tv",
