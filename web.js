@@ -17,7 +17,7 @@ app.listen(port, function() {
 // Render /contacts - does not render but process email to database
 app.post('/contact', function(req, res) {
     //var email=[];
-    var checkSignup = req.body.signupCheck;
+    //var checkSignup = req.body.signupCheck;
     var name =  "Sivi";  //req.body.name;
     var info =  "Hi!!!";  //req.body.info;
     var email = "moviply.tv@gmail.com"; //req.body.email;
@@ -49,7 +49,6 @@ app.post('/contact', function(req, res) {
 	user: process.env.G_username,
 	password:process.env.G_password,
 	host: "smtp.gmail.com",
-	port: 465,
 	ssl: true
     });
  
@@ -57,9 +56,9 @@ app.post('/contact', function(req, res) {
     var message = {
 	text: "Thanks for contacting us! We have receive your message and we will contact you as soon as possible. We received the following information:"
 	    +"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
-	from: "Chack <info@moviply.tv>",
+	from: "Chack <moviply.tv@gmail.com>",
 	to: name + " <"+email+">",
-	cc: "Chack <info@toolspin.com>",
+	cc: "Chack <moviply.tv@gmail.com>",
 	subject: "Information Request Confirmation",
 	attachment:
 	[
