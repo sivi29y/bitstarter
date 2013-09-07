@@ -1,13 +1,12 @@
 var express = require('express');
 var fs = require('fs');
 var async = require('async')
-  , http = require('http')
-  , https = require('https')
-  , db = require('./models')
-  , emailjs = require('emailjs');
+var http = require('http')
+var https = require('https')
+var db = require('./models')
+var emailjs = require('emailjs');
 
-
-
+//var app = express();
 var app = express.createServer(express.logger());
 var buf = fs.readFileSync('index.html','utf-8');
 var string_hello = buf.toString();
