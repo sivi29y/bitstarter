@@ -53,7 +53,7 @@ app.post('/contact', function(req, res) {
     //Send Email
     var server = emailjs.server.connect({
 	user: process.env.G_username,
-	password:process.env.G_password,
+	password: process.env.G_password,
 	host: "smtp.gmail.com",
 	port: 465,
 	//domain:"http://moviply.tv",
