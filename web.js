@@ -24,9 +24,9 @@ app.listen(port, function() {
 app.post('/contact', function(req, res) {
     //var email=[];
     //var checkSignup = req.body.signupCheck;
-    var name =  "Sivi";  //req.body.name;
-    var info =  "Hi!!!";  //req.body.info;
-    var email = "moviply.tv@gmail.com"; //req.body.email;
+    var name =  req.body.form_name;
+    var info =  req.body.form_msg;
+    var email = req.body.form_email;
 /*
     email.push(req.body.email);
 
@@ -60,6 +60,8 @@ app.post('/contact', function(req, res) {
 	//tls: true,
 	ssl: true
     });
+
+    /*
  
     // send the message and get a callback with an error or details of the message that was sent
     server.send({
@@ -69,8 +71,10 @@ app.post('/contact', function(req, res) {
 	cc:      "else <else@gmail.com>",
 	subject: "testing emailjs"
     }, function(err, message) { console.log(err || message); }); 
+     
+    */
 
-    /*
+    
     var message2 = {
 	text: "Thanks for contacting us! We have receive your message and we will contact you as soon as possible. We received the following information:"
 	    +"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
@@ -89,6 +93,6 @@ app.post('/contact', function(req, res) {
 
     // send the message and get a callback with an error or details of the message that was sent
     server.send(message, function(err, message) { console.log(err || message); });
-    */
+
 
 });
