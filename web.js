@@ -54,7 +54,7 @@ app.post('/contact', function(req, res) {
     var server = emailjs.server.connect({
 	user: process.env.G_username,
 	password:process.env.G_password,
-	host: "ssl://smtp.gmail.com",
+	host: "smtp.gmail.com",
 	port: 465,
 	//domain:"http://moviply.tv",
 	//tls: true,
@@ -62,7 +62,16 @@ app.post('/contact', function(req, res) {
     });
  
     // send the message and get a callback with an error or details of the message that was sent
-    var message = {
+    server.send({
+	text:    "i hope this works", 
+	from:    "info@moviply.com", 
+	to:      "moviply.tv <moviply.tv@gmail.com>",
+	cc:      "else <else@gmail.com>",
+	subject: "testing emailjs"
+    }, function(err, message) { console.log(err || message); }); 
+
+    /*
+    var message2 = {
 	text: "Thanks for contacting us! We have receive your message and we will contact you as soon as possible. We received the following information:"
 	    +"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
 	from: "infov@moviply.tv",
@@ -80,5 +89,6 @@ app.post('/contact', function(req, res) {
 
     // send the message and get a callback with an error or details of the message that was sent
     server.send(message, function(err, message) { console.log(err || message); });
-    
+    */
+
 });
