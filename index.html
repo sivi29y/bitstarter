@@ -21,6 +21,10 @@
     <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
     <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800" rel="stylesheet" type="text/css">
+
+    
+   
+    
     <!-- google analytics snippet -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -40,11 +44,14 @@
       type="image/png" 
       href="http://i296.photobucket.com/albums/mm161/drellaunited/glyphicons_009_magic.png" </link>             
 
-     <!-- contact form pop -->
+    <!-- contact form pop -->
+    <script src="/js/jquery.validationEngine.js"></script>
     <script>
-          $(document).ready(function () {
+
+              $(document).ready(function () {
 	        $("input#submit").click(function(){
-                 $.ajax({
+
+                   $.ajax({
                              type: "POST",
                              url: "/contact", //process to mail
                              data: $('form.contact_body').serialize(),
@@ -59,6 +66,45 @@
                                    });
                       });
                  });
+
+
+
+              $("#contact_body").submit(function(e) {
+	                 e.preventDefault(); // Prevents the page from refreshing
+
+	                 var $this = $(this); // `this` refers to the current form element
+
+	                 if( $("#contact_body").validationEngine('validate') ) {
+	                 //Post Data to Node Server
+	                 $.post(
+	                        $this.attr("action"), // Gets the URL to sent the post to
+	                        $this.serialize(), // Serializes form data in standard format
+	                        function(data) { /** code to handle response **/ },
+	                        "json" // The format the response should be in
+	                     );
+
+	      //Notify User That the Email Was Sent to the Server & Thanks!
+	      //$('#contactThanksModal').modal('show');
+	      $('#contactModal').modal('hide');
+              alert("success"); 
+
+	      }
+	      else {
+	      //handle Invalid Email Format Error
+              alert("shit"); 
+    
+	      }
+	      });
+
+
+
+
+
+
+
+
+
+
       </script>   
         
     <!-- css begin --> 
@@ -524,7 +570,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 		    <h3>Send us a message</h3>
 		      </div>
 	    <div class="modal-body">
-            <form class="contact_body" name="contact_body">
+            <form id="contact_body"class="contact_body" name="contact_body" action="/contact">
               <label class="label" for="form_name">Your Name</label><br>
               <input type="text" name="form_name" id="form_name" class="input-xlarge"><br>
               <label class="label" for="form_email">Your E-mail</label><br>
