@@ -52,7 +52,7 @@ app.post('/contact', function(req, res) {
      
     //Send Email
     var server = emailjs.server.connect({
-	user: process.env.G_username,
+	user: "sivi@moviply.tv",
 	password: process.env.G_password,
 	host: "smtp.gmail.com",
         //	port: 465,
@@ -78,7 +78,7 @@ app.post('/contact', function(req, res) {
     var message = {
 	text: "Thanks for contacting us! We have receive your message and we will contact you as soon as possible. We received the following information:"
 	    +"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
-	from: "moviply tv <moviply.tv@gmail.com>",
+	from: "sivi <sivi@moviply.tv>",
 	to: name + " <"+email+">",
 	subject: "Checking email",
 	attachment:
