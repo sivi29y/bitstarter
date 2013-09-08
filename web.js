@@ -55,9 +55,9 @@ app.post('/contact', function(req, res) {
 	user: process.env.G_username,
 	password: process.env.G_password,
 	host: "smtp.gmail.com",
-	port: 465,
+        //	port: 465,
 	//domain:"http://moviply.tv",
-	//tls: true,
+	tls: true,
 	ssl: true
     });
 
