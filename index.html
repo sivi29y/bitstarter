@@ -42,39 +42,11 @@
 
      <!-- contact form pop -->
     <script>
-          $(document).ready(function () {
-<<<<<<< HEAD
-	      $("input#submit").click(function(){
-                  var mailer = require('mailer');
-	          mailer.send({
-	             // node_mailer supports authentication,
-                     // docs at: https://github.com/marak/node_mailer
-	             host:    'localhost',
-	             port:    '25',
-                     to:      'moviply.tv@gmail.com,
-	             from:    'nodepad@example.com',
-                     subject: 'Welcome to Nodepad',
-                     body:    'All work and no play makes DailyJS pretty dull'
-	           },
 
-	      // Your response callback
-	  function(err, result) {
-          if (err) {
-                      console.log(err);
-	              alert("error on mailer");
-          }
-	 }
-       );
-                
-                 $.ajax({
-                             type: "POST",
-                             url: "process.php", //process to mail
-=======
 	        $("input#submit").click(function(){
                  $.ajax({
                              type: "POST",
                              url: "/contact", //process to mail
->>>>>>> develop
                              data: $('form.contact_body').serialize(),
                                      success: function(msg){
 	                             alert("success!")    
@@ -546,13 +518,13 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 
 
       <!--pop up contact form -->
-<<<<<<< HEAD
+
       <div class="well well-large">
-	<!--         <h2>Twitter Bootstrap Modal Contact Form Demo</h2>  -->
-	<div id="contact" class="modal hide fade in" style="display: none;">
-=======
+
+
+
       <div id="contact" class="modal hide fade in" style="display: none;">
->>>>>>> develop
+
 	  <div class="modal-header">
 	        <a class="close" data-dismiss="modal">x</a>
 		    <h3>Send us a message</h3>
@@ -571,10 +543,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
              <input class="btn btn-success" type="submit" value="Send!" id="submit">
              <a href="#" class="btn" data-dismiss="modal">Nah.</a>
            </div>
-<<<<<<< HEAD
-         </div>
-      <!-- <div id="thanks"><p><a data-toggle="modal" href="#contact" class="btn btn-primary btn-large">Modal powers, activate!</a></p></div> -->
-=======
+
+
+
+
       <!-- <div id="thanks"><p><a data-toggle="modal" href="#contact" class="btn btn-primary btn-large">Modal powers, activate!</a></p></div> -->
        </div>     
       <!-- pop about -->       
@@ -597,7 +569,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 
 
 
->>>>>>> develop
+
 </div>
   </body>
 </html>  
