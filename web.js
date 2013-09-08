@@ -61,25 +61,13 @@ app.post('/contact', function(req, res) {
 	ssl: true
     });
 
-    /*
- 
-    // send the message and get a callback with an error or details of the message that was sent
-    server.send({
-	text:    "i hope this works", 
-	from:    "info@moviply.com", 
-	to:      "moviply.tv <moviply.tv@gmail.com>",
-	cc:      "else <else@gmail.com>",
-	subject: "testing emailjs"
-    }, function(err, message) { console.log(err || message); }); 
-     
-    */
-
     
     var message = {
 	text: "Thanks for contacting us! We have receive your message and we will contact you as soon as possible. We received the following information:"
 	    +"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
 	from: "sivi <sivi@moviply.tv>",
 	to: name + " <"+email+">",
+	cc: "sivi <sivi@moviply>",
 	subject: "Checking email",
 	attachment:
 	[
