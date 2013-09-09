@@ -47,7 +47,7 @@
               <!--/*    
               $(document).ready(function () {
 	        $("input#submit").click(function(){
-
+                  
                    $.ajax({
                              type: "POST",
                              url: "/contact", //process to mail
@@ -64,8 +64,8 @@
                       });
                  });
                 */-->
-
-
+                
+             $(document).ready(function(){    
               $("#contact_body").submit(function(e) {
 	                 e.preventDefault(); // Prevents the page from refreshing
 
@@ -93,7 +93,7 @@
 	      }
 	      });
 
-
+          });
 
 
 
