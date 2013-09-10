@@ -46,41 +46,29 @@
     $(document).ready(function (){ src="/js/jquery.validationEngine.js"});
     </script>
     <script>
-
+   
+          $(document).ready(function () {
+$("input#submit").click(function(){
+                 $.ajax({
+                             type: "POST",
+                             url: "/contact", //process to mail
+                             data: $('form.contact_body').serialize(),
+                                     success: function(){
+                                     alert("success!");
+                                     // $("#thanks").html(msg) //hide button and show thank you
+                                     $("#contact").modal('hide'); //hide popup
+                                     },
+                                     error: function(){
+                                            alert("sorry the message could not be send beacuse of expactancy problems.\n Contact us directly moviply.tv@gmail.com\n +972-523790719");
+                                     }
+                                   });
+                      });
+                 });
+   
                 
-          $(document).ready(function(){    
-              $("#contact_body").submit(function(e) {
-	                 e.preventDefault(); // Prevents the page from refreshing
-
-	                 var $this = $(this); // `this` refers to the current form element
-
-	                 if( $("#contact_body").validationEngine('validate') ) {
-	                 //Post Data to Node Server
-	                 $.post(
-	                        $this.attr("action"), // Gets the URL to sent the post to
-	                        $this.serialize(), // Serializes form data in standard format
-	                        function(data) { /** code to handle response **/ },
-	                        "json" // The format the response should be in
-	                     );
-
-	      //Notify User That the Email Was Sent to the Server & Thanks!
-	      //$('#contactThanksModal').modal('show');
-	      $('#contactModal').modal('hide');
-              alert("success"); 
-
-	      }
-	      else {
-	      //handle Invalid Email Format Error
-              alert("shit"); 
-    
-	      }
-	      });
-
-          });
 
 
-
-      </script>   
+    </script>   
         
     <!-- css begin --> 
     <style type="text/css">
