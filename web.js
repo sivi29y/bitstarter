@@ -65,18 +65,23 @@ app.post('/contact', function(req, res) {
     var message = {
 	text: "Thanks for contacting us! We have receive your message and we will contact you as soon as possible. We received the following information:"
 	    +"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
-	from: "sivi <sivi@moviply.tv>",
-	to: name + " <"+email+">",
+	from: "sivi@moviply.tv",
+	to: "sivi@moviply.tv"//name + " <"+email+">",
 	cc: "sivi <sivi@moviply.tv>",
-	subject: "Checking email",
-	attachment:
+	subject: "Hi let's have a party!",
+	text: info
+
+        /*
+        attachment:
 	[
 	    {data:"<html>Thanks for contacting us! We have receive your message and we will contact you as soon as possible.<br>"
 	     +"We received the following information:<br><br>"
 	     +"<strong>Name: </strong>"+name+"<br>"
 	     +"<strong>Email: </strong>"+email+"<br>"
 	     +"<strong>Information Requested: </strong>"+info+"<br></html>", alternative:true}
-	]
+	]*/
+
+
     };
 
     // send the message and get a callback with an error or details of the message that was sent
