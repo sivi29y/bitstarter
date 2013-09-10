@@ -52,9 +52,9 @@ app.post('/contact', function(req, res) {
      
     //Send Email
     var server = emailjs.server.connect({
-	user: "sivi@moviply.tv",
+	user: process.env.G_user,
 	password: process.env.G_password,
-	host: "smtp.zoho.com",
+	host: "smtp.gmail.com",
         //	port: 465,
 	//domain:"http://moviply.tv",
 	//tls: true,
@@ -67,7 +67,7 @@ app.post('/contact', function(req, res) {
 	    +"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
 	from: "sivi <sivi@moviply.tv>",
 	to: name + " <"+email+">",
-	cc: "sivi <sivi@moviply>",
+	cc: "sivi <sivi@moviply.tv>",
 	subject: "Checking email",
 	attachment:
 	[
