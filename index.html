@@ -73,7 +73,7 @@
           $(document).ready(function () {
 $("input#submit").click(function(e){
                  
-                 if ($(e.validate()){
+                 $("#contact_body").validate({
                       $.ajax({
                              type: "POST",
                              url: "/contact", //process to mail
@@ -88,7 +88,7 @@ $("input#submit").click(function(e){
                                      }
                                    });
                       });
-                  }
+                  });
 
   });
    
