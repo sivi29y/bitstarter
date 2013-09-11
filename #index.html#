@@ -61,10 +61,15 @@
 
     <!-- contact form pop -->
     <script>
-    $(document).ready(function (){ src="/js/jquery.validationEngine.js"});
+    //$(document).ready(function (){ src="/js/jquery.validationEngine.js"});
     </script>
     <script>
-   
+    $(document).ready(function (){
+               $("contact_body").validate();
+               alert($("contact_body").validate().form()); 
+
+
+ });
           $(document).ready(function () {
 $("input#submit").click(function(e){
                  
