@@ -69,24 +69,23 @@
 $("input#submit").click(function(){
                  
                  if ($("#contact_body").validate()){
-                 $.ajax({
+                      $.ajax({
                              type: "POST",
                              url: "/contact", //process to mail
                              data: $('form.contact_body').serialize(),
                                      success: function(){
                                      // $("#thanks").html(msg) //hide button and show thank you
-                                     alert("success!");
-                                     $("#contact").modal('hide'); //hide popup
+                                         $("#contact").modal('hide'); //hide popup
+	                                 alert("success! but verify by phone"); 
                                      },
                                      error: function(){
                                             alert("sorry the message could not be send now");
                                      }
                                    });
                       });
-                   }
+                  }
 
-
-                 });
+  });
    
                 
 
