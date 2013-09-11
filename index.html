@@ -54,7 +54,10 @@
 
     <!-- contact form pop -->
     <script>
-    $(document).ready(function (){ src="/js/jquery.validationEngine.js"});
+    $(document).ready(function () { src="/js/jquery.validationEngine.js"});
+    $(document).ready(function() {$('#contact_body').validationEngine('attach'); }); 
+
+    
     </script>
     <script>
 
@@ -65,11 +68,17 @@ $(document).ready(function () {
                              success: "valid"
         });
 
+        $(function(){ $.validationEngine.defaults.validateAttribute = "class";});   
+      
+
         $("input#submit").click(function () {
         var form = $("#contact_body");
         form.validate();
         alert("Valid:" + form.valid());
         $("#contact_body").validationEngine();
+        
+
+
         if ($("#contact_body").validationEngine('validate')) {
             $.ajax({
                 type: "POST",
