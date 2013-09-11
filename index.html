@@ -66,7 +66,14 @@
 
  });
           $(document).ready(function () {
-$("input#submit").click(function(e){
+
+           jQuery.validator.setDefaults({
+                             debug: false,
+                             success: "valid"
+           });
+
+
+            $("input#submit").click(function(e){
                  
                  $("#contact_body").validate(function(){
                       $.ajax({
