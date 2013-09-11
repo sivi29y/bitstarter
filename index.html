@@ -67,6 +67,8 @@
    
           $(document).ready(function () {
 $("input#submit").click(function(){
+                 
+                 if ($("#commentForm").validate()){
                  $.ajax({
                              type: "POST",
                              url: "/contact", //process to mail
@@ -81,6 +83,9 @@ $("input#submit").click(function(){
                                      }
                                    });
                       });
+                   }
+
+
                  });
    
                 
