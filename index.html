@@ -75,7 +75,13 @@
 
             $("input#submit").click(function(e){
                  
-                 $("#contact_body").validate(function(){
+
+                 var form = $( "#contact_body" );
+                 form.validate();
+                 alert("Valid:"+ form.valid());
+                 $("#contact_body").validationEngine(); 
+
+                 if ($("#contact_body").validationEngine('validate')){
                       $.ajax({
                              type: "POST",
                              url: "/contact", //process to mail
@@ -90,7 +96,7 @@
                                      }
                                    });
                       });
-                  });
+                  }
 
   });
    
@@ -566,7 +572,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
               <label class="label" for="form_name">Your Name</label><br>
               <input type="text" name="form_name" id="form_name" class="input-xlarge"><br>
               <label class="label" for="form_email">Your E-mail</label><br>
-              <input type="form_email" name="form_email" class="input-xlarge"><br>
+              <input type="email" name="form_email" class="input-xlarge"><br>
               <label class="label" for="form_msg">Enter a Message</label><br>
               <textarea name="form_msg" class="input-xlarge"></textarea>
              </form>
