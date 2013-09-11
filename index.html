@@ -65,40 +65,36 @@
 
 
  });
-          $(document).ready(function () {
 
+$(document).ready(function () {
            jQuery.validator.setDefaults({
                              debug: false,
                              success: "valid"
-           });
+        });
 
-
-            $("input#submit").click(function(e){
-                 
-
-                 var form = $( "#contact_body" );
-                 form.validate();
-                 alert("Valid:"+ form.valid());
-                 $("#contact_body").validationEngine(); 
-
-                 if ($("#contact_body").validationEngine('validate')){
-                      $.ajax({
-                             type: "POST",
-                             url: "/contact", //process to mail
-                             data: $('form.contact_body').serialize(),
-                                     success: function(){
-                                     // $("#thanks").html(msg) //hide button and show thank you
-                                         $("#contact").modal('hide'); //hide popup
-	                                 alert("success! but verify by phone"); 
-                                     },
-                                     error: function(){
-                                            alert("sorry the message could not be send now");
-                                     }
-                                   });
-                      });
-                  }
-
-  });
+        $("input#submit").click(function () {
+        var form = $("#contact_body");
+        form.validate();
+        alert("Valid:" + form.valid());
+        $("#contact_body").validationEngine();
+        if ($("#contact_body").validationEngine('validate')) {
+            $.ajax({
+                type: "POST",
+                url: "/contact", //process to mail
+                data: $('form.contact_body').serialize(),
+                success: function () {
+                    // $("#thanks").html(msg) //hide button and show thank you
+                    $("#contact").modal('hide'); //hide popup
+                    alert("success! but verify by phone");
+                },
+                error: function () {
+                    alert("sorry the message could not be send now");
+                }
+            });
+      
+         }
+         });
+});
    
                 
 
