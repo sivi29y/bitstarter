@@ -68,14 +68,14 @@
           $(document).ready(function () {
 $("input#submit").click(function(){
                  
-                 if ($("#commentForm").validate()){
+                 if ($("#contact_body").validate()){
                  $.ajax({
                              type: "POST",
                              url: "/contact", //process to mail
                              data: $('form.contact_body').serialize(),
                                      success: function(){
-                                     alert("success!");
                                      // $("#thanks").html(msg) //hide button and show thank you
+                                     alert("success!");
                                      $("#contact").modal('hide'); //hide popup
                                      },
                                      error: function(){
