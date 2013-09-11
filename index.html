@@ -73,7 +73,7 @@
           $(document).ready(function () {
 $("input#submit").click(function(e){
                  
-                 $("#contact_body").validate({
+                 $("#contact_body").validate(function(){
                       $.ajax({
                              type: "POST",
                              url: "/contact", //process to mail
