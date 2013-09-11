@@ -76,8 +76,8 @@ $(document).ready(function () {
         var form = $("#contact_body");
         form.validate();
         alert("Valid:" + form.valid());
-        $("#contact_body").validationEngine();
-        if ($("#contact_body").validationEngine('validate')) {
+        //        $("#contact_body").validationEngine();
+        if (form.vaild()) {
             $.ajax({
                 type: "POST",
                 url: "/contact", //process to mail
@@ -85,7 +85,7 @@ $(document).ready(function () {
                 success: function () {
                     // $("#thanks").html(msg) //hide button and show thank you
                     $("#contact").modal('hide'); //hide popup
-                    alert("success! but verify by phone");
+                    alert("success! you can also drop by our office with a bikini");
                 },
                 error: function () {
                     alert("sorry the message could not be send now");
