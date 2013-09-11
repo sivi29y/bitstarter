@@ -69,8 +69,8 @@ $(document).ready(function () {
         var form = $("#contact_body");
         form.validate();
         alert("Valid:" + form.valid());
-        //        $("#contact_body").validationEngine();
-        if (form.vaild()) {
+        $("#contact_body").validationEngine();
+        if ($("#contact_body").validationEngine('validate')) {
             $.ajax({
                 type: "POST",
                 url: "/contact", //process to mail
