@@ -86,7 +86,7 @@ $(document).ready(function () {
         alert("Valid:" + form.valid());
         //$("#contact_body").validationEngine();
              
-        // if ($("#contact_body").validationEngine('validate'))
+        if ($("#contact_body").validationEngine('validate'))
         {
             $.ajax({
                 type: "POST",
