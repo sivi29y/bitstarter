@@ -10,6 +10,9 @@
     <script>window.jQuery || document.write('<script src="jquery-2.0.3.min.js"><\/script>')</script>
     <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script> 
     <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script> 
+
 
 
     <!-- Bootstrap --> 
@@ -53,13 +56,20 @@
       href="http://i296.photobucket.com/albums/mm161/drellaunited/glyphicons_009_magic.png" </link>             
 
     <!-- contact form pop -->
-    <script>
-    $(document).ready(function () { src="/js/jquery.validationEngine.js"});
-    
 
     
-    </script>
-    <script>
+<script>
+      $(document).ready(function(){
+                       $("form").validationEngine('attach', {promptPosition : "topLeft"});
+      });
+</script>
+
+
+<script>
+    $(document).ready(function () { src="/js/jquery.validationEngine.js"});
+</script>
+
+<script>
 
 
 $(document).ready(function () {
@@ -75,9 +85,7 @@ $(document).ready(function () {
         form.validate();
         alert("Valid:" + form.valid());
         //$("#contact_body").validationEngine();
-        
-
-
+             
         // if ($("#contact_body").validationEngine('validate'))
         {
             $.ajax({
