@@ -68,7 +68,7 @@ $(document).ready(function () {
                              success: "valid"
         });
 
-        $(function(){ $.validationEngine.defaults.validateAttribute = "class";});   
+        // $(function(){ $.validationEngine.defaults.validateAttribute = "class";});   
        
         $("input#submit").click(function () {
         var form = $("#contact_body");
@@ -78,7 +78,8 @@ $(document).ready(function () {
         
 
 
-        if ($("#contact_body").validationEngine('validate')) {
+        // if ($("#contact_body").validationEngine('validate'))
+        {
             $.ajax({
                 type: "POST",
                 url: "/contact", //process to mail
