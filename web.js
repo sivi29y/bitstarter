@@ -66,7 +66,7 @@ app.post('/contact', function(req, res) {
 	text:"it must work now!", // "Thanks for contacting us! We have receive your message and we will contact you as soon as possible. We received the following information:"
 	          //+"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
 	from: "sivi@moviply.tv",
-	to: name + " <"+email+">",
+	to: "moviply.tv@gmail.com,  /*    name + " <"+email+">",  */
 	cc: "moviply.tv@gmail.com",
 	subject: "Hi let's have a party!"
 	
