@@ -5,6 +5,9 @@ var fs = require('fs');
 //var https = require('https')
 //var db = require('./models')
 var emailjs = require('emailjs');
+var api_user = process.env.SENDGRID_USERNAME;
+var api_key = process.env.SENDGRID_PASSWORD;
+var sendgrid  = require('sendgrid')(api_user, api_key,{api: 'smtp'});
 
 //var app = express();
 var app = express.createServer(express.logger());
@@ -50,6 +53,7 @@ app.post('/contact', function(req, res) {
      console.log("E_User: "+process.env.E_USER);
 */
      
+/*
     //Send Email
     var server = emailjs.server.connect({
 	user: process.env.SENDGRID_USERNAME,
@@ -62,6 +66,7 @@ app.post('/contact', function(req, res) {
     });
 
      /*    name + " <"+email+">",  */
+/*
     var message = {
 	text:"it must work now!", // "Thanks for contacting us! We have receive your message and we will contact you as soon as possible. We received the following information:"
 	          //+"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
@@ -86,6 +91,25 @@ app.post('/contact', function(req, res) {
 
     // send the message and get a callback with an error or details of the message that was sent
     server.send(message, function(err, message) { console.log(err || message); });
+
+ AA */
+
+    var payload   = {
+                        to      : 'moviply.tv@gmail.com',
+                        from    : 'sivi@moviply.tv',
+                        subject : 'Saying Hi again',
+                        text    : 'This is my second email through SendGrid'
+       }
+
+
+    sendgrid.send(payload, function(err, json) {
+                        if (err) { console.error(err); }
+                             console.log(json);
+    });
+
+
+
+
 
 
 });
