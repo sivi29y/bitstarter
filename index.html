@@ -87,7 +87,7 @@ $(document).ready(function () {
                 type: "POST",
                 url: "/contact", //process to mail
                 data: $('form.contact_body').serialize(),
-                success: function () {
+                complete: function () {
                     // $("#thanks").html(msg) //hide button and show thank you
                     $("#contact").modal('hide'); //hide popup
                     alert("success! you can also drop by our office with a bikini");
@@ -144,7 +144,7 @@ $(document).ready(function () {
      .video, .thermometer, .order, .social, .statistics {
        text-align: center;
      }
-     .statistics h3, .statistics p {
+     .stats h3, .statistics p {
        color: white;
      }
      
