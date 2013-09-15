@@ -571,11 +571,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 	    <div class="modal-body">
             <form id="contact_body"class="contact_body" name="contact_body" action="/contact">
               <label class="label" for="form_name">Your Name</label><br>
-              <input type="text" name="form_name" id="form_name" class="input-xlarge"><br>
+              <input type="text" name="form_name" class="validate[required]" id="input-xlarge"><br>
               <label class="label" for="form_email">Your E-mail</label><br>
-              <input type="email" name="form_email" class="input-xlarge"><br>
+              <input type="email" name="form_email" class="validate[required]"  id="input-xlarge"><br>
               <label class="label" for="form_msg">Enter a Message</label><br>
-              <textarea name="form_msg" class="input-xlarge"></textarea>
+              <textarea name="form_msg" class="validate[required]" id="input-xlarge"></textarea>
              </form>
             </div>
 	        <div class="modal-footer">
