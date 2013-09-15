@@ -59,7 +59,7 @@
 <script>
     $(document).ready(function () { src="/js/jquery.validationEngine.js"});
     $(document).ready(function () { src="/js/jquery.validationEngine.js"});
-    jQuery(document).ready({ jQuery("#contact_body").validationEngine('attach', {promptPosition : "topLeft"});
+    //jQuery(document).ready({ jQuery("#contact_body").validationEngine('attach', {promptPosition : "topLeft"});
    
     
 </script>
@@ -81,7 +81,7 @@ $(document).ready(function () {
         alert("Valid:" + form.valid());
         $("#contact_body").validationEngine();
              
-        if ($("#contact_body").validationEngine('validate'))
+       // if ($("#contact_body").validationEngine('validate'))
         {
             $.ajax({
                 type: "POST",

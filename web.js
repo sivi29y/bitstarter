@@ -52,9 +52,9 @@ app.post('/contact', function(req, res) {
      
     //Send Email
     var server = emailjs.server.connect({
-	user: process.env.G_user,
-	password: process.env.G_password,
-	host: "smtp.gmail.com",
+	user: process.env.SENDGRID_USERNAME,
+	password: process.env.SENDGRID_PASSWORD,
+	host: "smtp.sendgrid.net",
         port: 587,
 	//domain:"http://moviply.tv",
 	//ssl: true,
@@ -65,7 +65,7 @@ app.post('/contact', function(req, res) {
     var message = {
 	text:"it must work now!", // "Thanks for contacting us! We have receive your message and we will contact you as soon as possible. We received the following information:"
 	          //+"Name: "+ name + ", Email: "+ email + ", Information Requested: "+ info,
-	from: "moviply.tv@gmail.com",
+	from: "sivi@moviply.tv",
 	to: name + " <"+email+">",
 	cc: "moviply.tv@gmail.com",
 	subject: "Hi let's have a party!"
