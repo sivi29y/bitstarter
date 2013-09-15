@@ -87,14 +87,14 @@ $(document).ready(function () {
                 type: "POST",
                 url: "/contact", //process to mail
                 data: $('form.contact_body').serialize(),
-                complete: function () {
-                    // $("#thanks").html(msg) //hide button and show thank you
+                beforeSend: function () {
+                    $("#thanks").html(msg) //hide button and show thank you
                     $("#contact").modal('hide'); //hide popup
-                    alert("success! you can also drop by our office with a bikini");
-                },
-                error: function () {
-                    alert("sorry the message could not be send now");
-                }
+                    //alert("success! you can also drop by our office with a bikini");
+                } // ,
+                //error: function () {
+                //    alert("sorry the message could not be send now");
+                // }
             });
       
          }
